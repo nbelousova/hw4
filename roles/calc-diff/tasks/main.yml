@@ -1,0 +1,11 @@
+- name: Clone calc-diff from GitHub
+  git: 
+   repo: https://github.com/nbelousova/calc-diff.git
+   dest: /srv
+
+- name: Add php nginx conf
+  template: src=diff.location.conf.j2 dest=/etc/nginx/sites-available/{{ inventory_hostname }}.diff.location.conf owner=root group=root mode=0644
+
+- name: Add include php nginx conf to main nginx conf
+  lineinfile: dest=/etc/nginx/sites-available/{{ inventory_hostname }}.ssl.conf regexp='serve_name' insertafter='server_name' line='include /etc/nginx/sites-available/{{ inventory_hostname }}.diff.location.conf'
+      

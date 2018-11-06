@@ -1,0 +1,2 @@
+- name: Installing php-fpm
+  apt: name=php-fpm state=present
