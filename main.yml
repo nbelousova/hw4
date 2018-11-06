@@ -1,6 +1,8 @@
-- hosts:  front
+- hosts: web 
 - roles:
   - nginx
+  - phpfpm
   - letsencrypt
   - calc-front
-
+  - calc-sum
+  - calc-diff
