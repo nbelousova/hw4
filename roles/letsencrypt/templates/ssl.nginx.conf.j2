@@ -5,7 +5,7 @@ server {
        ssl_certificate_key /etc/letsencrypt/live/{{ inventory_hostname }}/privkey.pem; 
          
        server_name {{ inventory_hostname }};
-       include *.location.conf
+       include /etc/nginx/sites-available/{{ inventory_hostname }}.*.location;
 
 }
 

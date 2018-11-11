@@ -3,5 +3,5 @@ Description=goapp
 
 [Service]
 Type=simple
-ExecStart=/srv/main
+ExecStart=/srv/goapp/main
 ExecStop=/bin/kill $MAINPID

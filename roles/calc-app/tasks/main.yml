@@ -1,0 +1,7 @@
+- name: Installing additional packages
+  apt: name={{ item }} state=present
+  with_items: "{{ calc_app_packages }}"
+
+- import_role: name=calc-front
+- import_role: name=calc-sum
+- import_role: name=calc-diff 

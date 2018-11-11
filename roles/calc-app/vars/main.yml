@@ -1,0 +1,8 @@
+---
+ calc_app_packages: 
+  - git
+ calc_app_roles:
+  - calc-front
+  - calc-sum
+  - calc-diff
+
